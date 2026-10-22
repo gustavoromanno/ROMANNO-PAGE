@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://romanno.com.br/sitemap.xml

@@ -38,6 +38,5 @@ Cole a URL de produção em `config.js` → `webhookUrl`. No nó Webhook, habili
 (*Allowed Origins* = seu domínio). Sem webhook, o formulário abre o e-mail do visitante já preenchido.
 
 ## Pendências
-- Razão social e CNPJ no rodapé (`index.html`, comentário TODO)
 - Número de WhatsApp em `config.js`
 - Prints reais dos projetos nos cases (hoje são ilustrações em HTML/CSS)
