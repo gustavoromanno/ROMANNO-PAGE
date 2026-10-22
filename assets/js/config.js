@@ -10,5 +10,5 @@ window.ROMANNO_CONFIG = {
   email: "contato@romanno.com.br",
 
   // WhatsApp só com números, com DDI e DDD. Ex.: "5531999999999". Vazio = esconde o botão.
-  whatsapp: ""
+  whatsapp: "5531933015571"
 };
