@@ -4,7 +4,7 @@
 window.ROMANNO_CONFIG = {
   // URL do webhook (n8n, Make, Formspree…). Recebe um POST em JSON com os dados do orçamento.
   // Enquanto estiver vazio, o formulário abre o e-mail do visitante já preenchido (fallback).
-  webhookUrl: "",
+  webhookUrl: "https://romanno.app.n8n.cloud/webhook/orcamento-romanno",
 
   // E-mail que recebe os pedidos (usado no fallback e no rodapé)
   email: "contato@romanno.com.br",
