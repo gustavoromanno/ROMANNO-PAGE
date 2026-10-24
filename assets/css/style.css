@@ -493,3 +493,4 @@ section{scroll-margin-top:90px}
 .brand-text small:before{content:"";width:14px;height:1px;background:currentColor;opacity:.7}
 .brand-text b{font-weight:400}
 .case-visual.fr .shots-tabs button.on{background:#C9A45C;border-color:#C9A45C;color:#0E1A2B}
+.case-visual .shots-view img[src*="joias"]{object-position:center}
