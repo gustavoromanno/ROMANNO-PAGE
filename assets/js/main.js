@@ -22,8 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
     el.href = "mailto:" + cfg.email; if (!el.textContent.trim()) el.textContent = cfg.email;
   });
   document.querySelectorAll("[data-whatsapp]").forEach(function (el) {
-    if (!cfg.whatsapp) { el.closest("li") ? el.closest("li").remove() : el.remove(); return; }
-    el.href = "https://wa.me/" + cfg.whatsapp; el.target = "_blank"; el.rel = "noopener";
+    var txt = el.getAttribute("data-wa-text");
+    if (!cfg.whatsapp) {
+      if (txt) return; // botão com fallback: mantém o href original (ex.: orcamento.html)
+      el.closest("li") ? el.closest("li").remove() : el.remove(); return;
+    }
+    el.href = "https://wa.me/" + cfg.whatsapp + (txt ? "?text=" + encodeURIComponent(txt) : "");
+    el.target = "_blank"; el.rel = "noopener";
   });
   document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
