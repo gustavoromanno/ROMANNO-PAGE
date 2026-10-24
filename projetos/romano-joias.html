@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Romano Joias — Projeto ROMANNO</title>
+<meta name="description" content="Demonstração visual do e-commerce Romano Joias, semijoias em prata 925, desenvolvido pela ROMANNO.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href="../assets/img/monograma.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--black:#111;--white:#fff;--green:#1C3B2E;--silver:#B8BEC2;--gray:#6B6B6B;--line:#E4E4E4;--paper:#F7F7F6;--mist:#EEF0EF}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--black);font-family:"Jost",Arial,sans-serif;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1200px,calc(100% - 48px));margin:auto}
+.demo-bar{background:var(--green);color:#DCE5E0;font-size:12.5px;text-align:center;padding:9px 16px;letter-spacing:.02em}
+.demo-bar a{color:#fff;text-decoration:underline;text-underline-offset:3px;margin-left:8px}
+.announce{background:var(--black);color:#D8DBDD;text-align:center;font-size:11px;letter-spacing:.28em;text-transform:uppercase;padding:9px 12px}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#333}
+.logo{text-align:center;line-height:1}
+.logo b{display:block;font-weight:300;font-size:22px;letter-spacing:.5em;margin-right:-.5em}
+.logo small{display:block;font-size:8.5px;letter-spacing:.5em;color:var(--gray);margin-top:6px;margin-right:-.5em}
+.icons{display:flex;justify-content:flex-end;gap:18px}
+.icons svg{width:20px;height:20px;fill:none;stroke:#222;stroke-width:1.4}
+.cart{position:relative}.cart i{position:absolute;top:-6px;right:-8px;width:16px;height:16px;border-radius:50%;background:var(--green);color:#fff;font-size:9.5px;font-style:normal;display:grid;place-items:center}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 75% 40%,#fff 0,#F1F2F1 38%,#E3E6E4 100%)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:600px;gap:40px;padding:60px 0}
+.eyebrow{font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:var(--gray)}
+.hero h1{font-weight:300;font-size:clamp(44px,5.6vw,80px);line-height:1.02;letter-spacing:-.02em;margin:18px 0 0}
+.hero h1 em{font-style:italic;color:var(--green)}
+.hero p{max-width:440px;color:var(--gray);font-size:17px;font-weight:300;margin:22px 0 0}
+.btn{display:inline-flex;align-items:center;gap:12px;height:52px;padding:0 30px;margin-top:32px;background:var(--black);color:#fff;font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:background .25s}
+.btn:hover{background:var(--green)}
+.btn.ghost{background:transparent;color:var(--black);border:1px solid var(--black);margin-left:10px}
+.btn.ghost:hover{background:var(--black);color:#fff}
+.hero-art{position:relative;height:480px}
+.hero-art .disc{position:absolute;inset:40px 30px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#fff,#E9ECEA 60%,#DADFDC);box-shadow:inset 0 -30px 60px rgba(0,0,0,.05)}
+.hero-art svg{position:absolute;filter:drop-shadow(0 18px 24px rgba(0,0,0,.12))}
+.art-necklace{width:66%;left:17%;top:6%}
+.art-ring{width:30%;right:8%;bottom:10%}
+.art-hoop{width:22%;left:6%;bottom:16%}
+.tag-925{position:absolute;left:8%;top:12%;padding:10px 16px;border:1px solid var(--black);font-size:11px;letter-spacing:.3em;background:#fff}
+section{padding:96px 0}
+.head{text-align:center;max-width:620px;margin:0 auto 52px}
+.head h2{font-weight:300;font-size:clamp(32px,3.4vw,48px);margin:14px 0 0;letter-spacing:-.01em}
+.head h2 em{font-style:italic;color:var(--green)}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cat{position:relative;aspect-ratio:3/4;background:var(--paper);display:flex;align-items:flex-end;justify-content:center;padding:22px;overflow:hidden;transition:background .3s}
+.cat:hover{background:var(--mist)}
+.cat svg{position:absolute;top:18%;left:50%;width:58%;transform:translateX(-50%);transition:transform .5s ease}
+.cat:hover svg{transform:translateX(-50%) scale(1.06) rotate(-3deg)}
+.cat span{position:relative;font-size:12px;letter-spacing:.3em;text-transform:uppercase;border-bottom:1px solid var(--black);padding-bottom:4px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 18px}
+.prod .img{position:relative;aspect-ratio:1;background:var(--paper);display:grid;place-items:center;overflow:hidden}
+.prod .img svg{width:56%;transition:transform .5s}
+.prod:hover .img svg{transform:scale(1.07)}
+.prod .badge{position:absolute;top:12px;left:12px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;background:var(--green);color:#fff;padding:4px 9px}
+.prod .add{position:absolute;left:12px;right:12px;bottom:12px;height:40px;background:var(--black);color:#fff;font-size:11px;letter-spacing:.2em;text-transform:uppercase;display:grid;place-items:center;opacity:0;transform:translateY(8px);transition:.3s}
+.prod:hover .add{opacity:1;transform:none}
+.prod h3{font-weight:400;font-size:15px;margin:14px 0 2px}
+.prod small{display:block;color:var(--gray);font-size:12.5px}
+.prod .price{margin-top:6px;font-size:15px}
+.prod .price s{color:#9a9a9a;font-size:13px;margin-right:8px}
+.prod .inst{display:block;font-size:12px;color:var(--green)}
+.band{background:var(--black);color:#fff;padding:0}
+.band-grid{display:grid;grid-template-columns:1fr 1fr;min-height:460px}
+.band-art{position:relative;background:radial-gradient(circle at 50% 50%,#2a2a2a,#111 70%);display:grid;place-items:center}
+.band-art svg{width:46%;filter:drop-shadow(0 20px 40px rgba(0,0,0,.6))}
+.band-text{padding:72px 64px;display:flex;flex-direction:column;justify-content:center}
+.band-text .eyebrow{color:var(--silver)}
+.band-text h2{font-weight:300;font-size:clamp(32px,3.4vw,48px);line-height:1.1;margin:16px 0 0}
+.band-text h2 em{font-style:italic;color:var(--silver)}
+.band-text p{color:#B9BCBE;font-weight:300;max-width:440px;margin:18px 0 0}
+.band-text .btn{background:#fff;color:var(--black);align-self:flex-start}
+.band-text .btn:hover{background:var(--silver)}
+.perks{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.perk{padding:34px 26px;text-align:center}
+.perk + .perk{border-left:1px solid var(--line)}
+.perk svg{width:28px;height:28px;fill:none;stroke:var(--green);stroke-width:1.3}
+.perk b{display:block;font-weight:500;font-size:14px;margin-top:12px;letter-spacing:.04em}
+.perk span{display:block;color:var(--gray);font-size:13px;margin-top:2px}
+.care{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.care div{padding:30px;border:1px solid var(--line)}
+.care b{display:block;font-weight:400;font-size:19px;margin-bottom:8px}
+.care p{margin:0;color:var(--gray);font-size:14.5px;font-weight:300}
+.news{background:var(--paper);text-align:center}
+.news form{display:flex;max-width:480px;margin:28px auto 0;border:1px solid var(--black);background:#fff}
+.news input{flex:1;border:0;padding:0 18px;height:52px;font:inherit;font-size:14px;outline:none;background:transparent}
+.news button{border:0;background:var(--black);color:#fff;padding:0 24px;font:inherit;font-size:11px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer}
+.news small{display:block;color:var(--gray);margin-top:12px;font-size:12px}
+footer{background:var(--black);color:#A9ADAF;padding:64px 0 30px;font-size:14px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+.foot .logo{text-align:left}.foot .logo b{color:#fff;margin-right:0}.foot .logo small{color:var(--silver);margin-right:0}
+.foot h4{color:#fff;font-weight:500;font-size:11px;letter-spacing:.26em;text-transform:uppercase;margin:0 0 14px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.pay{display:flex;gap:8px;margin-top:16px}
+.pay span{padding:5px 9px;border:1px solid #333;font-size:10.5px;letter-spacing:.08em;color:#ccc}
+.credit{display:flex;justify-content:space-between;gap:16px;margin-top:46px;padding-top:22px;border-top:1px solid #262626;font-size:12px;color:#7d8285}
+.credit a{color:#fff}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+@media(max-width:960px){
+  .nav ul{display:none}.nav{grid-template-columns:auto 1fr auto}.logo{text-align:left}.logo b,.logo small{margin-right:0}
+  .hero-grid,.band-grid{grid-template-columns:1fr}
+  .hero-art{height:360px}
+  .cats,.grid{grid-template-columns:repeat(2,1fr)}
+  .perks{grid-template-columns:1fr 1fr}.perk:nth-child(3){border-left:0}.perk:nth-child(n+3){border-top:1px solid var(--line)}
+  .care{grid-template-columns:1fr}
+  .band-text{padding:56px 28px}
+  .foot{grid-template-columns:1fr 1fr}
+  .prod .add{opacity:1;transform:none;position:static;margin-top:0;height:36px}
+}
+@media(max-width:560px){
+  .wrap{width:calc(100% - 32px)}
+  section{padding:72px 0}
+  .btn.ghost{margin-left:0}
+  .hero .actions{display:grid;gap:10px}.hero .btn{justify-content:center;margin-top:0}.hero .actions{margin-top:30px}
+  .foot{grid-template-columns:1fr}
+  .credit{flex-direction:column}
+  .grid{gap:22px 12px}
+}
+</style>
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="prata" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F4F5F6"/><stop offset=".35" stop-color="#B8BEC2"/><stop offset=".6" stop-color="#E9ECEE"/><stop offset="1" stop-color="#8E959A"/>
+    </linearGradient>
+    <radialGradient id="pedra" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#DDE6EC"/><stop offset="1" stop-color="#9FB0BB"/></radialGradient>
+    <symbol id="anel" viewBox="0 0 120 120"><ellipse cx="60" cy="72" rx="34" ry="34" fill="none" stroke="url(#prata)" stroke-width="7"/><path d="M48 40l12-16 12 16-12 10z" fill="url(#pedra)" stroke="#9AA3A9" stroke-width="1"/><path d="M50 41l10 6 10-6" fill="none" stroke="#fff" stroke-width="1" opacity=".8"/></symbol>
+    <symbol id="argola" viewBox="0 0 120 120"><circle cx="60" cy="66" r="36" fill="none" stroke="url(#prata)" stroke-width="6"/><path d="M60 18v12" stroke="url(#prata)" stroke-width="4" stroke-linecap="round"/><circle cx="60" cy="16" r="4" fill="url(#prata)"/></symbol>
+    <symbol id="colar" viewBox="0 0 160 120"><path d="M14 8 Q80 112 146 8" fill="none" stroke="url(#prata)" stroke-width="2.4" stroke-dasharray="1 3.2" stroke-linecap="round"/><path d="M80 62v10" stroke="url(#prata)" stroke-width="2"/><circle cx="80" cy="84" r="12" fill="url(#pedra)" stroke="url(#prata)" stroke-width="3"/></symbol>
+    <symbol id="pulseira" viewBox="0 0 120 120"><ellipse cx="60" cy="60" rx="44" ry="30" fill="none" stroke="url(#prata)" stroke-width="5"/><ellipse cx="60" cy="60" rx="44" ry="30" fill="none" stroke="#fff" stroke-width="1" opacity=".6" stroke-dasharray="2 6"/><circle cx="104" cy="60" r="5" fill="url(#pedra)" stroke="#9AA3A9"/></symbol>
+    <symbol id="brinco" viewBox="0 0 120 120"><circle cx="60" cy="40" r="10" fill="url(#pedra)" stroke="url(#prata)" stroke-width="3"/><path d="M60 50v14" stroke="url(#prata)" stroke-width="2.5"/><path d="M60 64l14 22-14 18-14-18z" fill="url(#pedra)" stroke="url(#prata)" stroke-width="2.5"/></symbol>
+    <symbol id="solitario" viewBox="0 0 120 120"><ellipse cx="60" cy="74" rx="32" ry="32" fill="none" stroke="url(#prata)" stroke-width="5"/><circle cx="60" cy="38" r="13" fill="url(#pedra)" stroke="url(#prata)" stroke-width="3"/><path d="M53 33l7-4 7 4" fill="none" stroke="#fff" stroke-width="1.2"/></symbol>
+  </defs>
+</svg>
+
+<div class="demo-bar">Demonstração visual de um projeto da ROMANNO (sem venda real). <a href="../">← Voltar ao portfólio</a></div>
+<div class="announce">Frete grátis acima de R$ 199 · Prata 925 com garantia</div>
+
+<header>
+  <div class="wrap nav">
+    <ul><li>Novidades</li><li>Anéis</li><li>Brincos</li><li>Colares</li></ul>
+    <div class="logo"><b>ROMANO</b><small>JOIAS</small></div>
+    <div class="icons" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+      <span class="cart"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1.5 12h-11z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><i>2</i></span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding:0">
+    <div class="wrap hero-grid">
+      <div class="rv">
+        <div class="eyebrow">Coleção Essencial</div>
+        <h1>O brilho do dia a dia, <em>em prata 925.</em></h1>
+        <p>Semijoias delicadas, feitas para usar todos os dias e combinar com tudo. Garantia, troca fácil e envio para todo o Brasil.</p>
+        <div class="actions"><a class="btn" href="#vitrine">Ver coleção →</a><a class="btn ghost" href="#categorias">Categorias</a></div>
+      </div>
+      <div class="hero-art rv" aria-hidden="true">
+        <div class="disc"></div>
+        <svg class="art-necklace" viewBox="0 0 160 120"><use href="#colar"/></svg>
+        <svg class="art-ring" viewBox="0 0 120 120"><use href="#solitario"/></svg>
+        <svg class="art-hoop" viewBox="0 0 120 120"><use href="#argola"/></svg>
+        <span class="tag-925">PRATA 925</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="categorias">
+    <div class="wrap">
+      <div class="head rv"><div class="eyebrow">Categorias</div><h2>Escolha <em>por peça.</em></h2></div>
+      <div class="cats">
+        <a class="cat rv" href="#vitrine"><svg viewBox="0 0 120 120"><use href="#anel"/></svg><span>Anéis</span></a>
+        <a class="cat rv" href="#vitrine"><svg viewBox="0 0 120 120"><use href="#brinco"/></svg><span>Brincos</span></a>
+        <a class="cat rv" href="#vitrine"><svg viewBox="0 0 160 120"><use href="#colar"/></svg><span>Colares</span></a>
+        <a class="cat rv" href="#vitrine"><svg viewBox="0 0 120 120"><use href="#pulseira"/></svg><span>Pulseiras</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="vitrine" style="padding-top:0">
+    <div class="wrap">
+      <div class="head rv"><div class="eyebrow">Mais vendidas</div><h2>As queridinhas <em>da coleção.</em></h2></div>
+      <div class="grid">
+        <article class="prod rv"><div class="img"><span class="badge">Novo</span><svg viewBox="0 0 120 120"><use href="#solitario"/></svg><span class="add">Adicionar à sacola</span></div><h3>Anel Solitário Ponto de Luz</h3><small>Prata 925 · zircônia</small><div class="price">R$ 129,90</div><span class="inst">ou 3x de R$ 43,30</span></article>
+        <article class="prod rv"><div class="img"><svg viewBox="0 0 120 120"><use href="#argola"/></svg><span class="add">Adicionar à sacola</span></div><h3>Argola Média Lisa</h3><small>Prata 925</small><div class="price">R$ 89,90</div><span class="inst">ou 2x de R$ 44,95</span></article>
+        <article class="prod rv"><div class="img"><svg viewBox="0 0 160 120"><use href="#colar"/></svg><span class="add">Adicionar à sacola</span></div><h3>Colar Ponto de Luz</h3><small>Prata 925 · 45 cm</small><div class="price"><s>R$ 169,90</s>R$ 149,90</div><span class="inst">ou 3x de R$ 49,97</span></article>
+        <article class="prod rv"><div class="img"><svg viewBox="0 0 120 120"><use href="#brinco"/></svg><span class="add">Adicionar à sacola</span></div><h3>Brinco Gota Cristal</h3><small>Prata 925 · zircônia</small><div class="price">R$ 99,90</div><span class="inst">ou 2x de R$ 49,95</span></article>
+        <article class="prod rv"><div class="img"><svg viewBox="0 0 120 120"><use href="#pulseira"/></svg><span class="add">Adicionar à sacola</span></div><h3>Pulseira Riviera Fina</h3><small>Prata 925 · ajustável</small><div class="price">R$ 139,90</div><span class="inst">ou 3x de R$ 46,63</span></article>
+        <article class="prod rv"><div class="img"><span class="badge">Mais vendido</span><svg viewBox="0 0 120 120"><use href="#anel"/></svg><span class="add">Adicionar à sacola</span></div><h3>Anel Navete</h3><small>Prata 925 · zircônia</small><div class="price">R$ 119,90</div><span class="inst">ou 3x de R$ 39,97</span></article>
+        <article class="prod rv"><div class="img"><svg viewBox="0 0 120 120"><use href="#argola"/></svg><span class="add">Adicionar à sacola</span></div><h3>Argola Mini Duo</h3><small>Prata 925 · par</small><div class="price">R$ 69,90</div><span class="inst">ou 2x de R$ 34,95</span></article>
+        <article class="prod rv"><div class="img"><svg viewBox="0 0 160 120"><use href="#colar"/></svg><span class="add">Adicionar à sacola</span></div><h3>Choker Elo Português</h3><small>Prata 925 · 40 cm</small><div class="price">R$ 189,90</div><span class="inst">ou 3x de R$ 63,30</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-grid">
+      <div class="band-art" aria-hidden="true"><svg viewBox="0 0 120 120"><use href="#solitario"/></svg></div>
+      <div class="band-text rv">
+        <div class="eyebrow">Para presentear</div>
+        <h2>Embalagem pronta <em>para entregar.</em></h2>
+        <p>Toda peça vai em caixinha com cartão. É só escolher a mensagem no carrinho.</p>
+        <a class="btn" href="#vitrine">Escolher presente →</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="perks">
+    <div class="perk"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><b>Frete grátis</b><span>acima de R$ 199</span></div>
+    <div class="perk"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><b>Garantia</b><span>em todas as peças</span></div>
+    <div class="perk"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg><b>Troca fácil</b><span>em até 7 dias</span></div>
+    <div class="perk"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg><b>Pix, cartão e boleto</b><span>parcele sem juros</span></div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="head rv"><div class="eyebrow">Cuidados</div><h2>Sua peça bonita <em>por muito mais tempo.</em></h2></div>
+      <div class="care">
+        <div class="rv"><b>Guarde separada</b><p>Em saquinho ou caixinha, longe de umidade, para não riscar nem escurecer.</p></div>
+        <div class="rv"><b>Evite químicos</b><p>Perfume, cremes e cloro de piscina aceleram o escurecimento da prata.</p></div>
+        <div class="rv"><b>Limpe com flanela</b><p>Uma flanela macia e seca devolve o brilho. Nada de produtos abrasivos.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="news">
+    <div class="wrap rv">
+      <div class="eyebrow">Lista VIP</div>
+      <h2 style="font-weight:300;font-size:clamp(28px,3vw,40px);margin:14px 0 0">Ganhe 10% na primeira compra</h2>
+      <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Demonstração ✓'"><input type="email" placeholder="Seu melhor e-mail" aria-label="E-mail"><button>Quero</button></form>
+      <small>Formulário demonstrativo: nenhum dado é enviado.</small>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><div class="logo"><b>ROMANO</b><small>JOIAS</small></div><p style="margin:18px 0 0;max-width:260px;font-weight:300">Semijoias em prata 925 para usar todos os dias.</p></div>
+      <div><h4>Loja</h4><ul><li>Anéis</li><li>Brincos</li><li>Colares</li><li>Pulseiras</li></ul></div>
+      <div><h4>Ajuda</h4><ul><li>Trocas e devoluções</li><li>Prazos de entrega</li><li>Cuidados com a prata</li><li>Fale conosco</li></ul></div>
+      <div><h4>Pagamento</h4><div class="pay"><span>PIX</span><span>CARTÃO</span><span>BOLETO</span></div></div>
+    </div>
+    <div class="credit"><span>Projeto desenvolvido pela <a href="../">ROMANNO</a>: identidade visual, loja virtual, catálogo e precificação.</span><span>Imagens ilustrativas · demonstração sem venda real</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){var els=document.querySelectorAll(".rv");if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return}
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.1});els.forEach(function(e){io.observe(e)})})();
+</script>
+</body>
+</html>

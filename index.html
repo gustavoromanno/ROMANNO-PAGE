@@ -146,15 +146,41 @@
   <!-- CASES -->
   <section class="sec cases-sec" id="cases">
     <div class="container">
-      <div class="sec-head center reveal"><div class="eyebrow">Cases</div><h2>Projetos reais, <em>no ar e em construção.</em></h2><p>Cada case mostra o problema, o que foi entregue e a tecnologia usada.</p></div>
+      <div class="sec-head center reveal"><div class="eyebrow">Cases</div><h2>Projetos reais, <em>da ideia ao ar.</em></h2><p>Cada case mostra o problema, o que foi entregue e a tecnologia usada.</p></div>
       <div class="cases">
+
+        <article class="case reveal">
+          <div class="case-visual dark">
+            <div class="screen rc" aria-hidden="true">
+              <div class="screen-bar"><i></i><i></i><i></i><span>romanoconcursos.com.br</span></div>
+              <div class="screen-body">
+                <div class="rc-top"><b>Romano Concursos</b><span>🔥 12 dias</span></div>
+                <div class="q-filters"><span>Português</span><span>CESPE</span><span>2025</span><span>Crase</span></div>
+                <div class="q-card"><b>Q. 0142 · Língua Portuguesa · CESPE</b><div class="q-opt">Certo</div><div class="q-opt ok">Errado ✓</div></div>
+                <div class="rc-stats"><div><small>Acertos</small><b>78%</b></div><div><small>Resolvidas</small><b>1.284</b></div><div><small>Revisar hoje</small><b>17</b></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="case-body">
+            <div class="case-meta"><span class="status">No ar · em evolução</span><small>Plataforma web · Java</small></div>
+            <h3>Romano Concursos</h3>
+            <p>Plataforma de estudos com banco de questões, simulados e acompanhamento de desempenho, no estilo das grandes plataformas do mercado.</p>
+            <ul>
+              <li>Filtros combináveis por disciplina, banca, ano e assunto, com correção na hora</li>
+              <li>Simulado cronometrado, revisão espaçada e cadernos de questões</li>
+              <li>Painel de desempenho, metas diárias e objetivo por concurso e cargo</li>
+              <li>Java + Spring Boot, PostgreSQL, testes automatizados e deploy contínuo</li>
+            </ul>
+            <a class="link-arrow" href="https://romanoconcursos.com.br" target="_blank" rel="noopener">Visitar a plataforma <span>→</span></a>
+          </div>
+        </article>
 
         <article class="case reveal">
           <div class="case-visual">
             <div class="screen" aria-hidden="true">
-              <div class="screen-bar"><i></i><i></i><i></i><span>romanno joias</span></div>
+              <div class="screen-bar"><i></i><i></i><i></i><span>romano joias</span></div>
               <div class="screen-body">
-                <div class="shop-head"><b>ROMANNO</b><em>SEMIJOIAS · PRATA 925</em></div>
+                <div class="shop-head"><b>ROMANO</b><em>SEMIJOIAS · PRATA 925</em></div>
                 <div class="shop-grid">
                   <div class="prod"><div class="img"></div><b>Anel solitário</b><small>R$ 129,90</small></div>
                   <div class="prod"><div class="img"></div><b>Argola média</b><small>R$ 89,90</small></div>
@@ -165,84 +191,42 @@
             </div>
           </div>
           <div class="case-body">
-            <div class="case-meta"><span class="status">No ar</span><small>E-commerce · Identidade visual</small></div>
-            <h3>Romanno Joias</h3>
+            <div class="case-meta"><span class="status">E-commerce</span><small>Loja virtual · Identidade visual</small></div>
+            <h3>Romano Joias</h3>
             <p>Loja de semijoias em prata 925 criada do zero: da marca ao checkout.</p>
             <ul>
               <li>Identidade visual completa e manual de marca</li>
-              <li>Migração de plataforma e configuração de tema e CSS</li>
+              <li>Loja virtual com tema e CSS personalizados</li>
               <li>DNS, domínio e certificado configurados</li>
               <li>Planilha de precificação com 200 SKUs e margens por faixa</li>
               <li>Calendário de conteúdo e roteiros para Reels/TikTok</li>
             </ul>
+            <a class="link-arrow" href="projetos/romano-joias.html">Ver projeto <span>→</span></a>
           </div>
         </article>
 
         <article class="case reveal">
-          <div class="case-visual dark">
-            <div class="screen" aria-hidden="true">
-              <div class="screen-bar"><i></i><i></i><i></i><span>api · questões</span></div>
-              <div class="code"><span class="c">// GET /questoes?disciplina=1&amp;banca=CESPE&amp;ano=2025</span><br><span class="k">@GetMapping</span>(<span class="s">"/questoes"</span>)<br><span class="k">public</span> Page&lt;QuestaoDTO&gt; listar(<br>&nbsp;&nbsp;QuestaoFiltro filtro, Pageable page) {<br>&nbsp;&nbsp;<span class="k">return</span> service.buscar(<br>&nbsp;&nbsp;&nbsp;&nbsp;QuestaoSpecs.de(filtro), page);<br>}</div>
-              <div class="screen-body">
-                <div class="q-filters"><span>Disciplina</span><span>Banca</span><span>Ano</span><span>Assunto</span></div>
-                <div class="q-card"><b>Q. 0142 · Informática</b><div class="q-opt">A) Firewall de aplicação</div><div class="q-opt ok">B) Proxy reverso ✓</div></div>
-              </div>
-            </div>
-          </div>
-          <div class="case-body">
-            <div class="case-meta"><span class="status">No ar · em evolução</span><small>Sistema web</small></div>
-            <h3>Plataforma de questões para concursos</h3>
-            <p>Banco de questões com filtros combináveis, correção imediata e estatísticas de desempenho.</p>
-            <ul>
-              <li>Back-end em Java + Spring Boot, banco PostgreSQL com Flyway</li>
-              <li>Filtros dinâmicos por disciplina, banca, ano e assunto, com paginação</li>
-              <li>API que não expõe o gabarito na listagem</li>
-              <li>Roadmap em sprints: autenticação JWT, dashboard e simulados</li>
-            </ul>
-            <a class="link-arrow" href="https://romanoconcursos.com.br" target="_blank" rel="noopener">Visitar <span>→</span></a>
-          </div>
-        </article>
-
-        <article class="case reveal">
-          <div class="case-visual green">
-            <div class="brand-board" aria-hidden="true">
-              <div class="logo"><b>ALDRIC &amp; ROWE</b><small>ink · bone · stone · brass · moss</small></div>
-              <div class="row"><div class="sw" style="background:#1B1B1F"></div><div class="sw" style="background:#EDE7DC"></div><div class="sw" style="background:#9C968C"></div><div class="sw" style="background:#A88A55"></div></div>
-            </div>
-          </div>
-          <div class="case-body">
-            <div class="case-meta"><span class="status dev">Em construção</span><small>E-commerce internacional</small></div>
-            <h3>Aldric &amp; Rowe e R&amp;M Apparel</h3>
-            <p>Duas marcas próprias para o mercado do Reino Unido e EUA, vendendo em libras e dólares.</p>
-            <ul>
-              <li>Naming, paleta e tipografia definidos do zero</li>
-              <li>Lojas Shopify com Stripe e PayPal</li>
-              <li>Integração com fornecedores e produção sob demanda</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="case reveal">
-          <div class="case-visual">
+          <div class="case-visual fr">
             <div class="phone" aria-hidden="true"><div class="phone-in">
-              <small>Saldo do mês</small><div class="bal">R$ 3.482,10</div>
-              <div class="tx"><span>Mercado · Apple Pay</span><em>Pendente</em></div>
-              <div class="tx done"><span>Farmácia</span><em>Saúde</em></div>
-              <div class="tx done"><span>Posto</span><em>Transporte</em></div>
-              <div class="tx done"><span>Cofrinho viagem</span><em>Meta</em></div>
-              <div class="phone-btn">Confirmar e categorizar</div>
+              <small>Saldo em contas</small><div class="bal">R$ 4.215,30</div>
+              <div class="tx"><span>Energia</span><em class="t-red">Hoje</em></div>
+              <div class="tx"><span>Internet</span><em>2 dias</em></div>
+              <div class="tx"><span>Aluguel</span><em>5 dias</em></div>
+              <div class="tx done"><span>Cofrinho viagem</span><em>64%</em></div>
+              <div class="phone-btn">Marcar como paga</div>
             </div></div>
           </div>
           <div class="case-body">
-            <div class="case-meta"><span class="status dev">Em desenvolvimento</span><small>App iOS</small></div>
-            <h3>App de finanças pessoais</h3>
-            <p>Captura compras do Apple Pay e deixa como pendente para o usuário só confirmar e categorizar.</p>
+            <div class="case-meta"><span class="status dev">Em desenvolvimento</span><small>Web + app</small></div>
+            <h3>Finanças R</h3>
+            <p>App de finanças pessoais que avisa antes de cada vencimento e junta bancos, contas e metas num lugar só.</p>
             <ul>
-              <li>App nativo em SwiftUI</li>
-              <li>Modelagem de domínio: cartões, carteiras e cofrinhos</li>
-              <li>Código aberto no GitHub</li>
+              <li>Contas a pagar com lembretes 5 dias antes, 2 dias antes e no dia</li>
+              <li>Lançamentos bancários via Open Finance</li>
+              <li>Site e app com a mesma conta, sincronizados</li>
+              <li>Cofrinhos e carteiras por objetivo</li>
             </ul>
-            <a class="link-arrow" href="https://github.com/gustavoromanno" target="_blank" rel="noopener">Ver no GitHub <span>→</span></a>
+            <a class="link-arrow" href="projetos/financas-r.html">Ver projeto <span>→</span></a>
           </div>
         </article>
 
@@ -325,7 +309,7 @@
       <div><h4>Empresa</h4><ul><li><a href="#cases">Cases</a></li><li><a href="#processo">Como trabalhamos</a></li><li><a href="#faq">Dúvidas</a></li><li><a href="orcamento.html">Solicitar orçamento</a></li></ul></div>
       <div><h4>Contato</h4><ul><li><a data-email href="#"></a></li><li><a data-whatsapp href="#">WhatsApp</a></li><li><a href="https://github.com/gustavoromanno" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://linkedin.com/in/gustavoromanno" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© <span data-year>2026</span> ROMANNO · Gustavo Henrique Silva Romano LTDA · CNPJ 64.518.482/0001-59</span><span>Belo Horizonte, MG · atendimento remoto em todo o Brasil</span></div>
+    <div class="footer-bottom"><span>© <span data-year>2026</span> Romano Co. · Gustavo Henrique Silva Romano LTDA · CNPJ 64.518.482/0001-59</span><span>Belo Horizonte, MG · atendimento remoto em todo o Brasil</span></div>
   </div>
 </footer>
 
