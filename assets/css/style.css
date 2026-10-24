@@ -485,3 +485,10 @@ section{scroll-margin-top:90px}
 .shots-tabs{display:flex;gap:6px;padding:10px;background:#fff;border-top:1px solid var(--mist)}
 .shots-tabs button{flex:1;height:32px;border-radius:99px;border:1px solid var(--mist);background:var(--paper);color:var(--ink2);font:inherit;font-size:12px;cursor:pointer;transition:.2s}
 .shots-tabs button.on{background:#1F7A6B;border-color:#1F7A6B;color:#fff}
+
+/* logo atualizado */
+.brand .brand-mark{color:var(--green)}
+.footer .brand .brand-mark{color:#fff}
+.brand-text small{display:flex;align-items:center;gap:8px}
+.brand-text small:before{content:"";width:14px;height:1px;background:currentColor;opacity:.7}
+.brand-text b{font-weight:400}
