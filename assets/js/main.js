@@ -40,3 +40,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }, { threshold: .12, rootMargin: "0px 0px -40px 0px" });
   els.forEach(function (e) { io.observe(e); });
 });
+
+// galeria de telas nos cases
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("[data-shots]").forEach(function (box) {
+    var imgs = box.querySelectorAll(".shots-view img"), tabs = box.querySelectorAll(".shots-tabs button"), i = 0, timer;
+    function show(n) {
+      i = n;
+      imgs.forEach(function (im, k) { im.classList.toggle("on", k === n); });
+      tabs.forEach(function (t, k) { t.classList.toggle("on", k === n); t.setAttribute("aria-selected", k === n ? "true" : "false"); });
+    }
+    function auto() { clearInterval(timer); if (!matchMedia("(prefers-reduced-motion: reduce)").matches) timer = setInterval(function () { show((i + 1) % imgs.length); }, 4500); }
+    tabs.forEach(function (t, k) { t.addEventListener("click", function () { show(k); auto(); }); });
+    auto();
+  });
+});
