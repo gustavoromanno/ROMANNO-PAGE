@@ -124,6 +124,24 @@ section{padding:110px 0}
 .cta-box h2{font-weight:400;font-size:clamp(30px,3.2vw,46px);margin:0;letter-spacing:-.02em}
 .cta-box p{color:#B7C3D1;max-width:520px;margin:16px auto 0;font-weight:300}
 .cta-box .actions{justify-content:center}
+.wl{max-width:760px;margin:30px auto 0;text-align:left}
+.wl-fields{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:12px}
+.wl label span{display:block;font-size:12px;color:#B7C3D1;margin:0 0 6px 4px}
+.wl input[type=text],.wl input[type=email],.wl input[type=tel],.wl input:not([type]){width:100%;height:50px;border-radius:14px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;padding:0 16px;font:inherit;font-size:15px;outline:none;transition:border-color .2s,background .2s}
+.wl input::placeholder{color:#7D8FA3}
+.wl input:focus{border-color:var(--mint);background:rgba(255,255,255,.1)}
+.wl input.bad{border-color:#E5675A}
+.wl-lgpd{display:flex;gap:10px;align-items:flex-start;margin:16px 0 0;font-size:13px;color:#B7C3D1;cursor:pointer}
+.wl-lgpd input{margin-top:3px;accent-color:#3FD0A0;width:16px;height:16px}
+.wl .pill-btn{margin-top:20px;border:0;cursor:pointer;font:inherit;font-weight:500;font-size:15px;width:100%;justify-content:center;height:52px}
+.wl .pill-btn[disabled]{opacity:.6;pointer-events:none}
+.wl .wl-msg{margin:12px 0 0;min-height:1.2em;font-size:13.5px;color:#F4A9A0;text-align:center}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.wl-ok{margin-top:24px}
+.wl-check{width:64px;height:64px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;background:rgba(63,208,160,.15);color:var(--mint);font-size:28px;border:1px solid rgba(63,208,160,.5)}
+.wl-ok h3{margin:0;font-weight:500;font-size:24px}
+.wl-ok .pill-btn{margin-top:20px}
+@media(max-width:700px){.wl-fields{grid-template-columns:1fr}}
 footer{border-top:1px solid var(--line);padding:28px 0;font-size:13px;color:var(--gray)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:var(--ink);font-weight:500}
@@ -271,8 +289,24 @@ footer a{color:var(--ink);font-weight:500}
     <div class="wrap">
       <div class="cta-box rv">
         <h2>Seja avisado quando o Finanças R abrir.</h2>
-        <p>Deixe seu e-mail e você recebe o convite para testar a primeira versão.</p>
-        <div class="actions"><a class="pill-btn" href="mailto:contato@romanno.com.br?subject=Quero%20testar%20o%20Finan%C3%A7as%20R">Quero testar →</a><a class="pill-btn ghost" href="../">Conhecer a ROMANNO</a></div>
+        <p>Deixe seus dados e você recebe o convite para testar a primeira versão.</p>
+        <form class="wl" id="waitlist" novalidate>
+          <div class="hp" aria-hidden="true"><label>Não preencha<input type="text" name="_hp" tabindex="-1" autocomplete="off"></label></div>
+          <div class="wl-fields">
+            <label><span>Nome</span><input name="nome" autocomplete="name" placeholder="Seu nome" required></label>
+            <label><span>E-mail</span><input name="email" type="email" autocomplete="email" placeholder="voce@email.com" required></label>
+            <label><span>Telefone</span><input name="telefone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(31) 99999-9999" required></label>
+          </div>
+          <label class="wl-lgpd"><input type="checkbox" name="lgpd" required> Autorizo o uso destes dados só para receber o convite e novidades do Finanças R.</label>
+          <button class="pill-btn" type="submit">Quero testar →</button>
+          <p class="wl-msg" role="status" aria-live="polite"></p>
+        </form>
+        <div class="wl-ok" hidden>
+          <div class="wl-check">✓</div>
+          <h3>Você está na lista!</h3>
+          <p>Enviamos uma confirmação para o seu e-mail. Assim que abrir, você é um dos primeiros a saber.</p>
+          <a class="pill-btn ghost" href="../">Conhecer a Romanno Tecnologia</a>
+        </div>
       </div>
     </div>
   </section>
@@ -285,6 +319,29 @@ footer a{color:var(--ink);font-weight:500}
 <script>
 (function(){var els=document.querySelectorAll(".rv");if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return}
 var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.1});els.forEach(function(e){io.observe(e)})})();
+</script>
+<script>
+(function(){
+  var URL="https://romanno.app.n8n.cloud/webhook/lista-financas-r";
+  var f=document.getElementById("waitlist"); if(!f) return;
+  var msg=f.querySelector(".wl-msg"), btn=f.querySelector("button"), tel=f.telefone;
+  tel.addEventListener("input",function(){var d=tel.value.replace(/\D/g,"").slice(0,11),o=d;if(d.length>2)o="("+d.slice(0,2)+") "+d.slice(2);if(d.length>7)o="("+d.slice(0,2)+") "+d.slice(2,d.length-4)+"-"+d.slice(-4);tel.value=o;});
+  f.querySelectorAll("input").forEach(function(i){i.addEventListener("input",function(){i.classList.remove("bad");msg.textContent="";});});
+  f.addEventListener("submit",function(e){
+    e.preventDefault(); if(f._hp.value) return;
+    var nome=f.nome.value.trim(), email=f.email.value.trim(), fone=tel.value.trim(), bad=[];
+    if(nome.length<2) bad.push(f.nome);
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) bad.push(f.email);
+    if(fone.replace(/\D/g,"").length<10) bad.push(tel);
+    bad.forEach(function(i){i.classList.add("bad");});
+    if(bad.length){msg.textContent="Confira os campos destacados.";bad[0].focus();return;}
+    if(!f.lgpd.checked){msg.textContent="Marque a autorização para continuar.";return;}
+    btn.disabled=true; btn.textContent="Enviando…";
+    fetch(URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({nome:nome,email:email,telefone:fone,origem:location.href})})
+      .then(function(r){if(!r.ok) throw 0; f.hidden=true; f.parentNode.querySelector(".wl-ok").hidden=false;})
+      .catch(function(){btn.disabled=false;btn.textContent="Quero testar →";msg.textContent="Não foi possível enviar agora. Tente de novo em instantes.";});
+  });
+})();
 </script>
 </body>
 </html>
