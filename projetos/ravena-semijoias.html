@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Romanno Joias — Projeto Romanno Tecnologia</title>
-<meta name="description" content="Demonstração visual do e-commerce Romanno Joias e do kit de identidade da marca, desenvolvidos pela Romanno Tecnologia.">
+<title>Ravena Semijoias — Projeto Romanno Tecnologia</title>
+<meta name="description" content="Demonstração visual do e-commerce Ravena Semijoias e do kit de identidade da marca, desenvolvidos pela Romanno Tecnologia.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#1C3B2E">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231C3B2E'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='34' fill='%23fff'%3ER%3C/text%3E%3C/svg%3E">
@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
-/* Paleta do Kit de Identidade Romanno */
+/* Paleta do Kit de Identidade Ravena */
 :root{--verde:#1C3B2E;--verde2:#2A5442;--dourado:#C08F3C;--nevoa:#F1F4F2;--tinta:#2E3A34;--branco:#fff;--linha:#DDE3DF;--cinza:#6B746F;--serif:"Century Schoolbook","New Century Schoolbook","TeX Gyre Schola",Georgia,serif}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -35,7 +35,7 @@ header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdro
 .cats-nav a:first-child{font-weight:500}
 .hero{position:relative;display:grid;background:var(--verde);color:#fff;overflow:hidden}
 .hero > *{grid-area:1/1}
-.hero img{width:100%;height:100%;min-height:clamp(380px,40vw,580px);object-fit:cover;object-position:left center}
+.hero-art{min-height:clamp(380px,40vw,580px)}.hero-art svg{width:100%;height:100%;display:block}
 .hero-text{align-self:center;justify-self:end;margin-right:max(24px,calc((100% - 1200px)/2));max-width:430px;padding:40px 0}
 .kicker{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--dourado);font-weight:400}
 .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,56px);line-height:1.08;margin:14px 0 0}
@@ -111,7 +111,7 @@ footer{background:var(--verde);color:#C9D5CE;font-size:14px;padding:56px 0 0}
   .nav{grid-template-columns:auto 1fr auto}.search{display:none}.logo{text-align:left;margin-right:0}
   .cats-nav{justify-content:flex-start;overflow-x:auto;padding:0 24px 14px;white-space:nowrap;gap:22px}
   .hero > *{grid-area:auto}
-  .hero img{min-height:0;height:300px;object-position:20% center}
+  .hero-art{min-height:0;height:300px}
   .hero-text{justify-self:stretch;margin:0;max-width:none;padding:34px 24px 40px}
   .cats{grid-template-columns:repeat(3,1fr)}
   .grid{grid-template-columns:repeat(2,1fr)}
@@ -148,12 +148,12 @@ footer{background:var(--verde);color:#C9D5CE;font-size:14px;padding:56px 0 0}
 </svg>
 
 <div class="demo-bar">Demonstração visual de um projeto da Romanno Tecnologia (sem venda real). <a href="../">← Voltar ao portfólio</a></div>
-<div class="toplinks"><div class="wrap"><span>Home</span><span>Sobre nós</span><span>Sobre a Romanno</span><span>Fale conosco</span></div></div>
+<div class="toplinks"><div class="wrap"><span>Home</span><span>Sobre nós</span><span>Sobre a Ravena</span><span>Fale conosco</span></div></div>
 
 <header>
   <div class="wrap nav">
     <div class="search" aria-hidden="true">Buscar <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></div>
-    <div class="logo">ROMANNO<small style="display:block;font-size:9px;letter-spacing:.5em;color:#6B746F;margin-top:4px">JOIAS</small></div>
+    <div class="logo">RAVENA<small style="display:block;font-size:9px;letter-spacing:.5em;color:#6B746F;margin-top:4px">SEMIJOIAS</small></div>
     <div class="icons" aria-hidden="true">
       <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
       <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
@@ -165,7 +165,10 @@ footer{background:var(--verde);color:#C9D5CE;font-size:14px;padding:56px 0 0}
 
 <main>
   <section class="hero" style="padding:0">
-    <img src="../assets/img/joias/hero-loja.jpg" alt="Modelo usando brinco e colar de ponto de luz da Romanno sobre fundo verde" width="1214" height="424">
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 600 420" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="luz" cx=".35" cy=".45" r=".7"><stop offset="0" stop-color="#2E6450"/><stop offset="1" stop-color="#1C3B2E"/></radialGradient></defs><rect width="600" height="420" fill="url(#luz)"/><circle cx="210" cy="210" r="150" fill="none" stroke="rgba(255,255,255,.08)"/><circle cx="210" cy="210" r="118" fill="none" stroke="rgba(192,143,60,.25)"/>
+      <use href="#colar" x="70" y="40" width="280" height="210"/><use href="#brinco" x="245" y="215" width="90" height="90"/><use href="#anel" x="110" y="250" width="120" height="120"/></svg>
+    </div>
     <div class="hero-text rv">
       <div class="kicker">Coleção Essencial · Prata 925</div>
       <h1>O brilho do dia a dia, sem esforço.</h1>
@@ -213,13 +216,13 @@ footer{background:var(--verde);color:#C9D5CE;font-size:14px;padding:56px 0 0}
   <!-- IDENTIDADE VISUAL: o trabalho por trás da loja -->
   <section class="idv" id="identidade">
     <div class="wrap">
-      <div class="head rv"><div class="kicker">O trabalho por trás da loja</div><h2>Identidade visual completa</h2><p>Antes da loja, a marca. A Romanno Tecnologia criou o kit de identidade da Romanno Joias: selo, paleta, tipografia, papelaria, embalagem e peças digitais, todos com regras de uso.</p></div>
+      <div class="head rv"><div class="kicker">O trabalho por trás da loja</div><h2>Identidade visual completa</h2><p>Antes da loja, a marca. A Romanno Tecnologia criou o kit de identidade da Ravena Semijoias: selo, paleta, tipografia, papelaria, embalagem e peças digitais, todos com regras de uso.</p></div>
 
       <div class="idv-cover">
-        <img class="rv" src="../assets/img/joias/kit-p1.jpg" alt="Capa do Kit de Identidade Romanno Joias, com o selo branco sobre verde" width="1400" height="989" loading="lazy">
+        <img class="rv" src="../assets/img/ravena/kit-p1.jpg" alt="Capa do Kit de Identidade Ravena Semijoias, com o selo branco sobre verde" width="1400" height="989" loading="lazy">
         <ul class="rv">
           <li><b>Selo e monograma</b><span>Versão principal, positiva, lockup horizontal e monograma para avatar e favicon, com área de proteção e tamanho mínimo.</span></li>
-          <li><b>Paleta e tipografia</b><span>Verde Romanno como cor dominante, dourado só em detalhes e acabamento especial, serifa para títulos e Jost para rótulos.</span></li>
+          <li><b>Paleta e tipografia</b><span>Verde Ravena como cor dominante, dourado só em detalhes e acabamento especial, serifa para títulos e sans leve para rótulos.</span></li>
           <li><b>Aplicações</b><span>Cartão de visitas, papel timbrado, tag de produto, lacre, cartão de agradecimento, embalagem e grade do Instagram.</span></li>
           <li><b>Loja alinhada à marca</b><span>Tema da loja ajustado às cores oficiais, para o selo não destoar do rodapé e dos banners.</span></li>
         </ul>
@@ -227,13 +230,13 @@ footer{background:var(--verde);color:#C9D5CE;font-size:14px;padding:56px 0 0}
 
       <p class="board-note rv">Kit completo, página por página. Clique em uma página para ver em tamanho real.</p>
       <div class="board">
-        <figure class="tile rv"><a href="../assets/img/joias/kit-p2.jpg" target="_blank" rel="noopener"><img src="../assets/img/joias/kit-p2.jpg" alt="Kit de identidade Romanno Joias, página 2: Versões do logo" width="1400" height="989" loading="lazy"></a><figcaption><b>02 · Versões do logo</b><span>Selo principal, positivo, lockup, monograma, área de proteção e tamanho mínimo</span></figcaption></figure>
-        <figure class="tile rv"><a href="../assets/img/joias/kit-p3.jpg" target="_blank" rel="noopener"><img src="../assets/img/joias/kit-p3.jpg" alt="Kit de identidade Romanno Joias, página 3: O que não fazer" width="1400" height="989" loading="lazy"></a><figcaption><b>03 · O que não fazer</b><span>Usos proibidos, fundos permitidos, cor do selo e efeitos</span></figcaption></figure>
-        <figure class="tile rv"><a href="../assets/img/joias/kit-p4.jpg" target="_blank" rel="noopener"><img src="../assets/img/joias/kit-p4.jpg" alt="Kit de identidade Romanno Joias, página 4: Cores e tipografia" width="1400" height="989" loading="lazy"></a><figcaption><b>04 · Cores e tipografia</b><span>Paleta oficial, proporção de uso, tipografia e escala</span></figcaption></figure>
-        <figure class="tile rv"><a href="../assets/img/joias/kit-p5.jpg" target="_blank" rel="noopener"><img src="../assets/img/joias/kit-p5.jpg" alt="Kit de identidade Romanno Joias, página 5: Cartão de visitas" width="1400" height="989" loading="lazy"></a><figcaption><b>05 · Cartão de visitas</b><span>Frente e verso, especificação, acabamento e arquivo de impressão</span></figcaption></figure>
-        <figure class="tile rv"><a href="../assets/img/joias/kit-p6.jpg" target="_blank" rel="noopener"><img src="../assets/img/joias/kit-p6.jpg" alt="Kit de identidade Romanno Joias, página 6: Papelaria e etiquetas" width="1400" height="989" loading="lazy"></a><figcaption><b>06 · Papelaria e etiquetas</b><span>Papel timbrado, tag de produto, adesivo de lacre e cartão de agradecimento</span></figcaption></figure>
-        <figure class="tile rv"><a href="../assets/img/joias/kit-p7.jpg" target="_blank" rel="noopener"><img src="../assets/img/joias/kit-p7.jpg" alt="Kit de identidade Romanno Joias, página 7: Embalagem" width="1400" height="989" loading="lazy"></a><figcaption><b>07 · Embalagem</b><span>Caixa rígida, sacola, flanela e regras de fotografia de produto</span></figcaption></figure>
-        <figure class="tile rv"><a href="../assets/img/joias/kit-p8.jpg" target="_blank" rel="noopener"><img src="../assets/img/joias/kit-p8.jpg" alt="Kit de identidade Romanno Joias, página 8: Digital" width="1400" height="989" loading="lazy"></a><figcaption><b>08 · Digital</b><span>Instagram, story, avatar, favicon, assinatura de e-mail e ajustes do site</span></figcaption></figure>
+        <figure class="tile rv"><a href="../assets/img/ravena/kit-p2.jpg" target="_blank" rel="noopener"><img src="../assets/img/ravena/kit-p2.jpg" alt="Kit de identidade Ravena Semijoias, página 2: Versões do logo" width="1400" height="989" loading="lazy"></a><figcaption><b>02 · Versões do logo</b><span>Selo principal, positivo, lockup, monograma, área de proteção e tamanho mínimo</span></figcaption></figure>
+        <figure class="tile rv"><a href="../assets/img/ravena/kit-p3.jpg" target="_blank" rel="noopener"><img src="../assets/img/ravena/kit-p3.jpg" alt="Kit de identidade Ravena Semijoias, página 3: O que não fazer" width="1400" height="989" loading="lazy"></a><figcaption><b>03 · O que não fazer</b><span>Usos proibidos, fundos permitidos, cor do selo e efeitos</span></figcaption></figure>
+        <figure class="tile rv"><a href="../assets/img/ravena/kit-p4.jpg" target="_blank" rel="noopener"><img src="../assets/img/ravena/kit-p4.jpg" alt="Kit de identidade Ravena Semijoias, página 4: Cores e tipografia" width="1400" height="989" loading="lazy"></a><figcaption><b>04 · Cores e tipografia</b><span>Paleta oficial, proporção de uso, tipografia e escala</span></figcaption></figure>
+        <figure class="tile rv"><a href="../assets/img/ravena/kit-p5.jpg" target="_blank" rel="noopener"><img src="../assets/img/ravena/kit-p5.jpg" alt="Kit de identidade Ravena Semijoias, página 5: Cartão de visitas" width="1400" height="989" loading="lazy"></a><figcaption><b>05 · Cartão de visitas</b><span>Frente e verso, especificação, acabamento e arquivo de impressão</span></figcaption></figure>
+        <figure class="tile rv"><a href="../assets/img/ravena/kit-p6.jpg" target="_blank" rel="noopener"><img src="../assets/img/ravena/kit-p6.jpg" alt="Kit de identidade Ravena Semijoias, página 6: Papelaria e etiquetas" width="1400" height="989" loading="lazy"></a><figcaption><b>06 · Papelaria e etiquetas</b><span>Papel timbrado, tag de produto, adesivo de lacre e cartão de agradecimento</span></figcaption></figure>
+        <figure class="tile rv"><a href="../assets/img/ravena/kit-p7.jpg" target="_blank" rel="noopener"><img src="../assets/img/ravena/kit-p7.jpg" alt="Kit de identidade Ravena Semijoias, página 7: Embalagem" width="1400" height="989" loading="lazy"></a><figcaption><b>07 · Embalagem</b><span>Caixa rígida, sacola, flanela e regras de fotografia de produto</span></figcaption></figure>
+        <figure class="tile rv"><a href="../assets/img/ravena/kit-p8.jpg" target="_blank" rel="noopener"><img src="../assets/img/ravena/kit-p8.jpg" alt="Kit de identidade Ravena Semijoias, página 8: Digital" width="1400" height="989" loading="lazy"></a><figcaption><b>08 · Digital</b><span>Instagram, story, avatar, favicon, assinatura de e-mail e ajustes do site</span></figcaption></figure>
       </div>
     </div>
   </section>
@@ -250,12 +253,12 @@ footer{background:var(--verde);color:#C9D5CE;font-size:14px;padding:56px 0 0}
 
 <footer>
   <div class="wrap foot">
-    <div><h4>Institucional</h4><ul><li>Sobre nós</li><li>Sobre a Romanno</li><li>Fale conosco</li></ul></div>
+    <div><h4>Institucional</h4><ul><li>Sobre nós</li><li>Sobre a Ravena</li><li>Fale conosco</li></ul></div>
     <div><h4>Sua conta</h4><ul><li>Minha conta</li><li>Minhas compras</li><li>Meu carrinho</li><li>Meus favoritos</li></ul></div>
     <div><h4>Precisa de ajuda?</h4><ul><li>Política de privacidade</li><li>Termos de uso</li><li>Dúvidas frequentes</li><li>Acompanhar meus pedidos</li></ul></div>
     <div><h4>Formas de pagamento</h4><div class="pay"><span>Mastercard</span><span>Visa</span><span>Amex</span><span>Elo</span><span>Pix</span></div></div>
   </div>
-  <div class="wrap copy">Todos os direitos reservados à Romanno Joias · Belo Horizonte, MG</div>
+  <div class="wrap copy">Todos os direitos reservados à Ravena Semijoias · Belo Horizonte, MG</div>
   <div class="credit">Identidade visual, loja virtual e catálogo por <a href="../">Romanno Tecnologia</a>. Peças ilustradas nesta demonstração.</div>
 </footer>
 
